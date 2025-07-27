@@ -2,7 +2,7 @@ A responsive and animated sidebar built using HTML, CSS, and JavaScript. It smoo
 
 Built With:
 HTML5
-CSS3 (Flexbox)
+CSS (Flexbox)
 JavaScript (Toggle logic)
 
 
