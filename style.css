@@ -1,0 +1,313 @@
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-color: #E4E9F7;
+  --sidebar-color: #fff;
+  --primary-color: #695CFE;
+  --primary-color-light: #F6F5FF;
+  --toggle-color: #ddd;
+  --text-color: #707070;
+
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+}
+
+body {
+  height: 100vh;
+  background: var(--body-color);
+  transition: var(--tran-05);
+}
+
+body.dark {
+  --body-color: #18191a;
+  --sidebar-color: #242526;
+  --primary-color: #3A3B3C;
+  --primary-color-light: #3A3B3C;
+  --toggle-color: #fff;
+  --text-color: #CCC;
+}
+
+.Sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  
+  background: var(--sidebar-color);
+  transition: var(--tran-05);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.Sidebar.close {
+  width: 88px;
+}
+
+.Sidebar .text {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-color);
+  transition: var(--tran-03);
+  white-space: nowrap;
+  opacity: 1;
+  transition: var(--tran-03);
+}
+
+.Sidebar.close .text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.Sidebar .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Sidebar .image-text img {
+  width: 45px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.Sidebar li {
+  height: 50px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.Sidebar li a {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+  border-radius: 6px;
+  padding-left: 0px;
+  transition: var(--tran-04);
+  position: relative;
+}
+
+.Sidebar li a .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  border-radius: 50;
+  font-size: 20px;
+
+}
+
+.Sidebar li .icon,
+.Sidebar li .text {
+  color: var(--text-color);
+  transition: var(--tran-02);
+}
+
+.Sidebar li a:hover {
+  background: var(--primary-color);
+}
+
+.Sidebar li a:hover .icon,
+.Sidebar li a:hover .text {
+  color: var(--sidebar-color);
+}
+
+body.dark .Sidebar li a:hover .icon,
+body.dark .Sidebar li a:hover .text {
+  color: var(--text-color);
+}
+
+.Sidebar header {
+  position: relative;
+  padding: 20px;
+}
+
+.Sidebar header .image-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-text .name {
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--text-color);
+}
+
+.header-text .profession {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--text-color);
+}
+
+.Sidebar header .toggle {
+  position: absolute;
+  top: 50%;
+  right: -12.5px;
+  transform: translateY(-50%);
+  height: 25px;
+  width: 25px;
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--sidebar-color);
+  font-size: 22px;
+  transition: var(--tran-03);
+  cursor: pointer;
+}
+
+.Sidebar.close header .toggle {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.Sidebar .menu {
+  flex: 1;
+  margin-top: 35px;
+}
+
+.Sidebar .menu-bar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.Sidebar .search-box {
+  background: var(--primary-color-light);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  transition: var(--tran-05);
+}
+
+.search-box input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  background: var(--primary-color-light);
+  transition: var(--tran-05);
+}
+
+.menu-bar .bottom-content {
+  margin-top: auto;
+  padding: 10px 0;
+}
+
+.menu-bar .mode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--primary-color-light);
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.menu-bar .moon-sun {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.menu-bar .mode i {
+  position: absolute;
+  transition: var(--tran-03);
+}
+
+.menu-bar .mode i.sun {
+  opacity: 0;
+}
+
+body.dark .menu-bar .mode i.sun {
+  opacity: 1;
+}
+
+body.dark .menu-bar .mode i.moon {
+  opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: 60px;
+  cursor: pointer;
+}
+
+.toggle-switch .switch {
+  position: relative;
+  height: 22px;
+  width: 44px;
+  border-radius: 25px;
+  background: var(--toggle-color);
+}
+
+.switch::before {
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background: var(--sidebar-color);
+  transition: var(--tran-03);
+}
+
+body.dark .switch::before {
+  left: 24px;
+}
+
+.home {
+  position: relative;
+  left: 250px;
+  height: 100vh;
+  background: var(--body-color);
+  transition: var(--tran-05);
+}
+
+.home .text {
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--text-color);
+  padding: 8px 40px;
+}
+
+.Sidebar.close ~ .home {
+  left: 88px;
+  width: calc(100% - 88px);
+}
+
+.Sidebar.close li a {
+  justify-content: center;
+  padding-left: 0px;
+}
